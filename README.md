@@ -102,19 +102,62 @@ PyTorch
 NumPy
 ```
 # Project Architecture
-Camera Feed
-     ↓
-YOLOv8 Person Detection
-     ↓
-QR Identity Verification
-     ↓
-DeepSORT Tracking
-     ↓
-Distance Estimation
-     ↓
-Motor Control System
-     ↓
-Cart Movement
+
+                +----------------------+
+                |      Camera Feed     |
+                +----------+-----------+
+                           |
+                           v
+                +----------------------+
+                |  YOLOv8 Detection    |
+                |  (Person Detection)  |
+                +----------+-----------+
+                           |
+                           v
+                +----------------------+
+                |  QR Code Scanner     |
+                | (Owner Identification)|
+                +----------+-----------+
+                           |
+                           v
+                +----------------------+
+                |   DeepSORT Tracker   |
+                | (Multi-Object Track) |
+                +----------+-----------+
+                           |
+                           v
+                +----------------------+
+                | Distance Estimation  |
+                |  & Path Planning     |
+                +----------+-----------+
+                           |
+            +--------------+--------------+
+            |                             |
+            v                             v
++----------------------+      +----------------------+
+| Obstacle Detection   |      | Owner Lost Handler   |
+| (Ultrasonic/LiDAR)  |      | (Search up to 50 frames)|
++----------+-----------+      +----------+-----------+
+           |                             |
+           +-------------+---------------+
+                         |
+                         v
+                +----------------------+
+                |   Decision Engine    |
+                | (Follow / Stop /     |
+                |  Search / Override)  |
+                +----------+-----------+
+                           |
+                           v
+                +----------------------+
+                |   Motor Controller   |
+                | (PWM / Direction)    |
+                +----------+-----------+
+                           |
+                           v
+                +----------------------+
+                |   Cart Movement      |
+                +----------------------+
 
 
 
