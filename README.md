@@ -102,6 +102,8 @@ PyTorch
 NumPy
 ```
 # Project Architecture
+```
+
 
                 +----------------------+
                 |      Camera Feed     |
@@ -159,5 +161,5 @@ NumPy
                 |   Cart Movement      |
                 +----------------------+
 
-
+```
 
