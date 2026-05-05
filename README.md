@@ -101,3 +101,20 @@ deep-sort-realtime
 PyTorch
 NumPy
 ```
+# Project Architecture
+Camera Feed
+     ↓
+YOLOv8 Person Detection
+     ↓
+QR Identity Verification
+     ↓
+DeepSORT Tracking
+     ↓
+Distance Estimation
+     ↓
+Motor Control System
+     ↓
+Cart Movement
+
+
+
